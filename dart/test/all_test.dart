@@ -1,9 +1,9 @@
 // Copyright (c) 2015, Rick Zhou. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-library base2e15.test;
+library at_base2e15.test;
 
-import 'package:base2e15/base2e15.dart';
+import 'package:at_base2e15/at_base2e15.dart';
 import 'dart:convert';
 //import 'dart:math';
 

@@ -8,7 +8,7 @@
 /// 0x545C ~ 0x7FFF -> U+AC00 ~ U+D7A3   Hangul Syllables
 /// 7 bits special case, only used by last character
 ///  0x00  ~  0x7F  -> U+3400 ~ U+347F   CJK Unified Ideographs Extension A
-library base2e15;
+library at_base2e15;
 
 import 'dart:typed_data';
 
