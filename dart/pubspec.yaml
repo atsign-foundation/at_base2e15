@@ -1,10 +1,10 @@
-name: base2e15
+name: at_base2e15
 environment:
   sdk: '>=2.12.0 <3.0.0'
 description: >
   binary-to-text encoding schemes that represent binary data in an unicode string format, each unicode character represent 15 bits of binary data.
 version: 1.0.0
-homepage: https://github.com/rinick/base2e15
+homepage: https://github.com/atsign-foundation/base2e15
 
 dev_dependencies:
   pedantic: ^1.11.0
