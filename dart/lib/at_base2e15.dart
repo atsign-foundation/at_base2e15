@@ -17,9 +17,9 @@ class Base2e15 {
       [int lineSize = 0, String? linePadding]) {
     List<int?> charCodes = encodeToCharCode(bytes);
     if (lineSize <= 0) {
-      return new String.fromCharCodes(charCodes as Iterable<int>);
+      return String.fromCharCodes(charCodes as Iterable<int>);
     }
-    List rslt = [];
+    List<String?> rslt = <String?>[];
     int len = charCodes.length;
     for (int i = 0; i < len; i += lineSize) {
       int j = i + lineSize;
@@ -28,10 +28,10 @@ class Base2e15 {
       }
       if (linePadding != null) {
         rslt.add(
-            '$linePadding${new String.fromCharCodes(charCodes.sublist(i, j) as Iterable<int>)}');
+            '$linePadding${String.fromCharCodes(charCodes.sublist(i, j) as Iterable<int>)}');
       } else {
         rslt.add(
-            new String.fromCharCodes(charCodes.sublist(i, j) as Iterable<int>));
+            String.fromCharCodes(charCodes.sublist(i, j) as Iterable<int>));
       }
     }
     return rslt.join('\n');
@@ -41,7 +41,7 @@ class Base2e15 {
     int bn = 15; // bit needed
     int bv = 0; // bit value
     int outLen = (bytes.length * 8 + 14) ~/ 15;
-    List<int> out = new List<int>.filled(outLen, -1, growable: false);
+    List<int> out = List<int>.filled(outLen, -1, growable: false);
     int pos = 0;
     for (int byte in bytes) {
       if (bn > 8) {
@@ -82,7 +82,7 @@ class Base2e15 {
     int bn = 8; // bit needed
     int bv = 0; // bit value
     int maxLen = (input.length * 15 + 7) ~/ 8;
-    Uint8List out = new Uint8List(maxLen);
+    Uint8List out = Uint8List(maxLen);
     int pos = 0;
     int cv;
     for (int code in input.codeUnits) {

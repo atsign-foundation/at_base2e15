@@ -5,7 +5,6 @@ library at_base2e15.test;
 
 import 'package:at_base2e15/at_base2e15.dart';
 import 'dart:convert';
-//import 'dart:math';
 
 bool testEqual(Object a, Object b, String testName) {
   if (a == b) {
@@ -17,7 +16,7 @@ bool testEqual(Object a, Object b, String testName) {
   }
 }
 
-main() {
+void main() {
   String msg = 'Base2e15 is awesome!';
   String encoded = Base2e15.encode(utf8.encode(msg));
   testEqual(encoded, '嗺둽嬖蟝巍媖疌켉溁닽壪', 'Encoding Test');
