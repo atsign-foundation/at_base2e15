@@ -1,4 +1,4 @@
-# Base2<sup>15</sup>
+# At_Base2<sup>15</sup>
 
 binary-to-text encoding scheme that represents binary data in an unicode string format. Each unicode character represents 15 bits of binary data.
 
@@ -37,27 +37,6 @@ main() {
 }
 ```
 
-example in c:
-```c
-#include <stdio.h>
-#include "base2e15.h"
-int main(int argc, char *argv[])
-{
-    char c[] = "Base2e15 is awesome!";
-    int len = strlen(c);
-
-    int encodeLen = base2e15_encode_length(len) + 1; \\ one more char for the \0
-    wchar_t* encoded = malloc(encodeLen * sizeof(wchar_t));
-    base2e15_encode(c, len, encoded, encodeLen);
-    
-    // int buffLen = base2e15_decode_length(encoded, -1);
-    int buffLen = 256; 
-    char* decoded = malloc(buffLen * sizeof(char));
-    int decodeLen = base2e15_decode(encoded, -1, decoded, buffLen);
-    // if buffLen is not big enough, decodeLen will be -1
-}
-```
-
 ## Compare
 
 | Compare | Base2<sup>15</sup> |  Base64 |
@@ -72,3 +51,14 @@ int main(int argc, char *argv[])
 The unicode range `CJK Unified Ideographs Extension B` contains 42711 characters (U+20000 ~ U+2A6D6), together with the characters used by Base2<sup>15</sup>, there are more than 65536 usable characters to encode 16 bits in each character.
 
 However, font support for `CJK Unified Ideographs Extension B` is missing in most mobile devices and using this code range will also reduce the bits capacity in UTF8 and UTF16 encoding, since those characters require one more byte in UTF8 and 2 more bytes in UTF16.
+
+## Why is this forked from [rinick/base2e15](https://github.com/rinick/base2e15)?
+
+We use base2e15 as an underlying dependency for a number of things, and need
+a null safety version so that the higher order dependencies can offer null
+safety.
+
+## What about other language support?
+
+Support for C, C# & Java has been removed from this fork as we're only
+interested in Dart null safety.
